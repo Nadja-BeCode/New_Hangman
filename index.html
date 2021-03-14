@@ -4,13 +4,47 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>New Hangman</title>
 </head>
 <body>
-    <h1>New Hangman</h1>
-    <p>Click the button and see the next step.</p>
+    <!--<h1>New Hangman</h1>
+   <p>Click the button and see the next step.</p>
         <button ="button" onclick="button()">Play the game</button>
-    <p id = "test"></p>
-    <script src="./script.js"></script>
+    <p id = "test"></p>--> 
+    <script>
+// MY ARRAY WORDS
+let arrWords = ["javascript","hangman"];
+//PICK A RANDOM WORD
+let word = arrWords[Math.floor(Math.random() * arrWords.length)];
+//SET MY ANWSER WORD
+let answerArr = [];
+for(let i = 0; i = word.length; i++){
+    answerArr[i] = "_";
+}
+//*********************************************************** */
+let letterWordLeft = word.length;
+//MY FUNCTION TO SHOW THE LETTER 
+/*while(letterWordLeft > 0) {
+    alert(answerArr.join(" "));// JOIN EACH LETTERS WITH A SPACE
+    let guessLetter = prompt("Guess a letter please");*/
+    if (guessLetter == null) {
+        break;//to left the game(cancel)
+        
+    }else if (guessLetter.length !== 1){
+        alert("Enter one letter please.");// TO ORDER TO ENTEr ONLY ONE LETTER
+    }else{
+        for (let j = 0; j < word.length; j++) {
+                if(word[j] === guessLetter){
+                answerArr[j] = guessLetter;
+                letterWord--;
+            }
+
+        } 
+    }
+}
+alert(answerArr.join(" "));// JOIN EACH LETTERS WITH A SPACE
+alert("Congrats ! The word to guess was " + word);
+
+    </script>
 </body>
 </html>
