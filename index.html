@@ -7,26 +7,22 @@
     <title>New Hangman</title>
 </head>
 <body>
-    <!--<h1>New Hangman</h1>
-   <p>Click the button and see the next step.</p>
-        <button ="button" onclick="button()">Play the game</button>
-    <p id = "test"></p>--> 
     <script>
 // MY ARRAY WORDS
-let arrWords = ["javascript","hangman"];
+const arrWords = ["javascript","hangman"];
 //PICK A RANDOM WORD
 let word = arrWords[Math.floor(Math.random() * arrWords.length)];
 //SET MY ANWSER WORD
 let answerArr = [];
-for(let i = 0; i = word.length; i++){
+for(let i = 0; i < word.length; i++){
     answerArr[i] = "_";
 }
 //*********************************************************** */
 let letterWordLeft = word.length;
 //MY FUNCTION TO SHOW THE LETTER 
-/*while(letterWordLeft > 0) {
+while(letterWordLeft > 0) {
     alert(answerArr.join(" "));// JOIN EACH LETTERS WITH A SPACE
-    let guessLetter = prompt("Guess a letter please");*/
+    let guessLetter = prompt("Guess a letter please");
     if (guessLetter == null) {
         break;//to left the game(cancel)
         
@@ -36,15 +32,13 @@ let letterWordLeft = word.length;
         for (let j = 0; j < word.length; j++) {
                 if(word[j] === guessLetter){
                 answerArr[j] = guessLetter;
-                letterWord--;
+                letterWordLeft--;
             }
-
         } 
     }
 }
 alert(answerArr.join(" "));// JOIN EACH LETTERS WITH A SPACE
 alert("Congrats ! The word to guess was " + word);
-
     </script>
 </body>
 </html>
